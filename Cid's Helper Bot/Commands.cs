@@ -387,6 +387,7 @@ public class AddRoles : BaseCommandModule
             return;
         }
         CidBot.commandsRecieved++;
+        CheckName(ctx);
         string userName = ctx.Member.Username;
 
         switch (userName)
@@ -436,6 +437,12 @@ public class AddRoles : BaseCommandModule
         }
         CidBot.commandsRecieved++;
         Random random = new Random();
+        if (name == "Robyn")
+        {
+            await ctx.RespondAsync("Why the hell would I yell at them?  They are a neat person");
+            return;
+        }
+
         if (name == "Mikiri" || name == "mikiri")
         {
             name = "Scarlett";
@@ -481,6 +488,39 @@ public class AddRoles : BaseCommandModule
                 name = name.ToUpper();
                 await ctx.RespondAsync($"{name}!!!!");
                 break;
+        }
+    }
+
+    [Command("Punch")]
+    public async Task Punch(CommandContext ctx, [RemainingText] string name)
+    {
+        /*if(name == "Kirby")
+        {
+            await ctx.RespondAsync("*CLOBBAS DAT DERE KIRBY WITH HIS HAMMER*");
+            return;
+        }*/
+        if (CidBot.commandsRecieved >= 10)
+        {
+            await TooManyCommands(ctx);
+            return;
+        }
+        CidBot.commandsRecieved++;
+        Random random = new Random();
+        if (random.Next(1, 20) == 5)
+        {
+            name = name.ToUpper();
+            await ctx.RespondAsync("*PUNCHES" + ctx.Member.Nickname.ToUpper() + " WITH HIS FIST*");
+            await ctx.RespondAsync("THAT'S FOR TELLING ME TO PUNCH SOMEONE");
+        }
+        else if (random.Next(1, 10) == 8)
+        {
+            name = name.ToUpper();
+            await ctx.RespondAsync("*PUNCHES " + name.ToUpper() + " WITH HIS FIST*");
+            await ctx.RespondAsync("THERE, YA HAPPY?");
+        }
+        else
+        {
+            await ctx.RespondAsync("No");
         }
     }
 
@@ -564,7 +604,7 @@ public class AddRoles : BaseCommandModule
     public async Task MultiRoll(CommandContext ctx, int iterations, [RemainingText] string command)
     {
         string fullResult = "";
-        for(int i = 0; i < iterations; i++)
+        for (int i = 0; i < iterations; i++)
         {
             fullResult += Rolling(ctx, command);
             fullResult += "\n";
@@ -628,7 +668,7 @@ public class AddRoles : BaseCommandModule
                     line = "";
                     break;
                 case 'k':
-                    if(fullCommand[i + 1] == 'l' || fullCommand[i + 1] == 'h')
+                    if (fullCommand[i + 1] == 'l' || fullCommand[i + 1] == 'h')
                     {
                         commands.Add(line);
                         line = "";
@@ -649,7 +689,7 @@ public class AddRoles : BaseCommandModule
             {
                 positions.Add(i);
             }
-            else if(commands[i] == "l")
+            else if (commands[i] == "l")
             {
                 Console.WriteLine("TEST");
                 positions.Add(-1);
@@ -670,23 +710,23 @@ public class AddRoles : BaseCommandModule
             bool add = false;
             bool roll = false;
             if (positions[i] == -1)
-                {
-                    disad = true;
-                }
+            {
+                disad = true;
+            }
             else if (positions[i] == -2)
-                {
-                    add = true;
-                }
+            {
+                add = true;
+            }
             else
-                {
-                    roll = true;
-                }
-            
-            if(previous == 3 && roll)
+            {
+                roll = true;
+            }
+
+            if (previous == 3 && roll)
             {
                 int batchresult = 0;
                 string batch = "(";
-                for(int j = 0; j < rolls.Count; j++)
+                for (int j = 0; j < rolls.Count; j++)
                 {
                     if (j != 0)
                     {
@@ -707,21 +747,21 @@ public class AddRoles : BaseCommandModule
                 List<int> badRolls = new List<int>();
                 foreach (int j in rolls)
                 {
-                    if(goodRolls.Count < keep)
+                    if (goodRolls.Count < keep)
                     {
                         goodRolls.Add(j);
                     }
                     else
                     {
                         int biggerNum = 0;
-                        for(int k = 0; k < goodRolls.Count; k++)
+                        for (int k = 0; k < goodRolls.Count; k++)
                         {
-                            if(goodRolls[k] > biggerNum)
+                            if (goodRolls[k] > biggerNum)
                             {
                                 biggerNum = goodRolls[k];
                             }
                         }
-                        if(j < biggerNum)
+                        if (j < biggerNum)
                         {
                             goodRolls.Remove(biggerNum);
                             goodRolls.Add(rolls[j]);
@@ -731,7 +771,7 @@ public class AddRoles : BaseCommandModule
                         {
                             badRolls.Add(j);
                         }
-                    }    
+                    }
                 }
                 int batchresult = 0;
                 string batch = "(";
@@ -741,7 +781,7 @@ public class AddRoles : BaseCommandModule
                     {
                         batch += ", ";
                     }
-                    if(badRolls.Contains(rolls[j]))
+                    if (badRolls.Contains(rolls[j]))
                     {
                         batch += "~~" + rolls[j] + "~~";
                     }
@@ -750,7 +790,7 @@ public class AddRoles : BaseCommandModule
                         batch += rolls[j];
                         batchresult += rolls[j];
                     }
-                    
+
 
                 }
                 batch += ")";
@@ -792,7 +832,7 @@ public class AddRoles : BaseCommandModule
                         {
                             badRolls.Add(j);
                         }
-                        
+
                     }
                 }
                 int batchresult = 0;
@@ -842,8 +882,8 @@ public class AddRoles : BaseCommandModule
                     {
                         batch += ", ";
                     }
-                        batch += rolls[j];
-                        batchresult += rolls[j];
+                    batch += rolls[j];
+                    batchresult += rolls[j];
 
 
                 }
@@ -877,7 +917,7 @@ public class AddRoles : BaseCommandModule
         string operation = "null";
         foreach (string item in mathCommands)
         {
-            if(item == "l" || item == "h")
+            if (item == "l" || item == "h")
             {
                 continue;
             }
@@ -897,9 +937,9 @@ public class AddRoles : BaseCommandModule
         }
         sum = first;
         //[] batchArray = batches.ToArray();
-        for(int i = 0; i < mathCommands.Count; i++)
+        for (int i = 0; i < mathCommands.Count; i++)
         {
-            if(mathCommands[i] == "h" || mathCommands[i] == "l")
+            if (mathCommands[i] == "h" || mathCommands[i] == "l")
             {
                 i++;
                 continue;
@@ -921,7 +961,7 @@ public class AddRoles : BaseCommandModule
         }
         result += $" for a total of {sum}";
         return result;
-        
+
     }
 
     private int Math(int num1, string command, int num2)
@@ -1064,6 +1104,324 @@ public class AddRoles : BaseCommandModule
             ch.Description = newdescription;
             ch.imageURL = newURL;
             characters.Add(ch);
+        }
+    }
+
+    [Command("RandomPlayer")]
+    public async Task RandomPlayer(CommandContext ctx)
+    {
+        Random random = new Random();
+        int character = random.Next(0, 26);
+        switch (character)
+        {
+            case 0:
+                await ctx.RespondAsync("https://i.imgur.com/AxGiFLq.jpg");
+                break;
+            case 1:
+                await ctx.RespondAsync("https://i.imgur.com/xwX7uNe.jpg");
+                break;
+            case 2:
+                await ctx.RespondAsync("https://i.imgur.com/Bf6JcAq.png");
+                break;
+            case 3:
+                await ctx.RespondAsync("https://i.imgur.com/v1UtSR2.jpg");
+                break;
+            case 4:
+                await ctx.RespondAsync("https://i.imgur.com/ycYsNYG.jpg");
+                break;
+            case 5:
+                await ctx.RespondAsync("https://i.imgur.com/ZTP1S8m.png");
+                break;
+            case 6:
+                await ctx.RespondAsync("https://i.imgur.com/CxwDwtA.png");
+                break;
+            case 7:
+                await ctx.RespondAsync("https://i.imgur.com/56X1n3r.png");
+                break;
+            case 8:
+                await ctx.RespondAsync("https://i.imgur.com/NTXsvlW.png");
+                break;
+            case 9:
+                await ctx.RespondAsync("https://i.imgur.com/j4A8l1u.png");
+                break;
+            case 10:
+                await ctx.RespondAsync("https://i.imgur.com/r9hU4wk.png");
+                break;
+            case 11:
+                await ctx.RespondAsync("https://i.imgur.com/WT24uFW.png");
+                break;
+            case 12:
+                await ctx.RespondAsync("https://i.imgur.com/tyXF2Fr.png");
+                break;
+            case 13:
+                await ctx.RespondAsync("https://i.imgur.com/9Qhxz4j.png");
+                break;
+            case 14:
+                await ctx.RespondAsync("https://i.imgur.com/DzWVHiO.png");
+                break;
+            case 15:
+                await ctx.RespondAsync("https://i.imgur.com/7iS5Ncj.png");
+                break;
+            case 16:
+                await ctx.RespondAsync("https://i.imgur.com/Og41uz5.png");
+                break;
+            case 17:
+                await ctx.RespondAsync("https://i.imgur.com/U5uDuvQ.png");
+                break;
+            case 18:
+                await ctx.RespondAsync("https://i.imgur.com/EZ1DoWk.png");
+                break;
+            case 19:
+                await ctx.RespondAsync("https://i.imgur.com/6GqHw4o.jpg");
+                break;
+            case 20:
+                await ctx.RespondAsync("https://i.imgur.com/pSn9XhJ.png");
+                break;
+            case 21:
+                await ctx.RespondAsync("https://i.imgur.com/5Rrto0X.jpg");
+                break;
+            case 22:
+                await ctx.RespondAsync("https://i.imgur.com/PTFAV0i.png");
+                break;
+            case 23:
+                await ctx.RespondAsync("https://i.imgur.com/OFrDMma.png");
+                break;
+            case 24:
+                await ctx.RespondAsync("https://i.imgur.com/6KgEQAl.png");
+                break;
+            case 25:
+                await ctx.RespondAsync("https://i.imgur.com/w6Vgt20.png?1");
+                break;
+        }
+
+    }
+
+    [Command("RandomRadiant")]
+    public async Task RandomRadiant(CommandContext ctx)
+    {
+        Random random = new Random();
+        int character = random.Next(0, 16);
+        switch (character)
+        {
+            case 0:
+                await ctx.RespondAsync("https://i.imgur.com/u80gzMU.jpg");
+                break;
+            case 1:
+                await ctx.RespondAsync("https://i.imgur.com/Mg3OSw1.jpg?1");
+                break;
+            case 2:
+                await ctx.RespondAsync("https://i.imgur.com/82Rr4Ru.png");
+                break;
+            case 3:
+                await ctx.RespondAsync("https://i.imgur.com/BbycZ6b.jpg");
+                break;
+            case 4:
+                await ctx.RespondAsync("https://i.imgur.com/DqMMtEZ.jpg");
+                break;
+            case 5:
+                await ctx.RespondAsync("https://i.imgur.com/dQa9G16.png?2");
+                break;
+            case 6:
+                await ctx.RespondAsync("https://i.imgur.com/j0gqdwa.png");
+                break;
+            case 7:
+                await ctx.RespondAsync("https://i.imgur.com/k21e2U8.png?1");
+                break;
+            case 8:
+                await ctx.RespondAsync("https://i.imgur.com/NVWNYpn.png?1");
+                break;
+            case 9:
+                await ctx.RespondAsync("https://i.imgur.com/Hhtbz31.png?1");
+                break;
+            case 10:
+                await ctx.RespondAsync("https://i.imgur.com/ZKBa20n.png?1");
+                break;
+            case 11:
+                await ctx.RespondAsync("https://i.imgur.com/SdEMjVG.png?1");
+                break;
+            case 12:
+                await ctx.RespondAsync("https://i.imgur.com/DbfqNjM.png");
+                break;
+            case 13:
+                await ctx.RespondAsync("https://i.imgur.com/wvRnnjK.png?1");
+                break;
+            case 14:
+                await ctx.RespondAsync("https://i.imgur.com/SQx8hd2.jpg");
+                break;
+            case 15:
+                await ctx.RespondAsync("https://i.imgur.com/bPTTCX7.png?2");
+                break;
+        }
+    }
+
+    [Command("RandomWings")]
+    public async Task RandomWings(CommandContext ctx)
+    {
+        Random random = new Random();
+        int character = random.Next(0, 16);
+        switch (character)
+        {
+            case 0:
+                await ctx.RespondAsync("https://i.imgur.com/LWrxci8.png");
+                break;
+            case 1:
+                await ctx.RespondAsync("https://i.imgur.com/DFIpJzc.png");
+                break;
+            case 2:
+                await ctx.RespondAsync("https://i.imgur.com/wyHfCFZ.png?1");
+                break;
+            case 3:
+                await ctx.RespondAsync("https://i.imgur.com/OURGCzJ.png?2");
+                break;
+            case 4:
+                await ctx.RespondAsync("https://i.imgur.com/2fWLp9F.png?2");
+                break;
+            case 5:
+                await ctx.RespondAsync("https://i.imgur.com/QSmD59H.png?2");
+                break;
+            case 6:
+                await ctx.RespondAsync("https://i.imgur.com/BSps2nI.png?2");
+                break;
+            case 7:
+                await ctx.RespondAsync("https://i.imgur.com/XBfIkg1.png?2");
+                break;
+            case 8:
+                await ctx.RespondAsync("https://i.imgur.com/f2hppu8.png?2");
+                break;
+            case 9:
+                await ctx.RespondAsync("https://i.imgur.com/DukX1Ch.png?2");
+                break;
+            case 10:
+                await ctx.RespondAsync("https://i.imgur.com/63PJcs3.png?2");
+                break;
+            case 11:
+                await ctx.RespondAsync("https://i.imgur.com/nHUDhVU.png?2");
+                break;
+            case 12:
+                await ctx.RespondAsync("https://i.imgur.com/aZB6h2i.png?2");
+                break;
+            case 13:
+                await ctx.RespondAsync("https://i.imgur.com/7iRt3la.png?2");
+                break;
+            case 14:
+                await ctx.RespondAsync("https://i.imgur.com/dGhp7nW.png?2");
+                break;
+            case 15:
+                await ctx.RespondAsync("https://i.imgur.com/6z5Fqp9.png?2");
+                break;
+        }
+    }
+    [Command("RandomOrg")]
+    public async Task RandomOrg(CommandContext ctx)
+    {
+        Random random = new Random();
+        int character = random.Next(0, 14);
+        switch (character)
+        {
+            case 0:
+                await ctx.RespondAsync("https://i.imgur.com/zkTyBMT.png");
+                break;
+            case 1:
+                await ctx.RespondAsync("https://i.imgur.com/nQaEMsM.png?1");
+                break;
+            case 2:
+                await ctx.RespondAsync("https://i.imgur.com/TJHtCjl.png?1");
+                break;
+            case 3:
+                await ctx.RespondAsync("https://i.imgur.com/iq8jCaf.png?1");
+                break;
+            case 4:
+                await ctx.RespondAsync("https://i.imgur.com/bMBiJSY.png?1");
+                break;
+            case 5:
+                await ctx.RespondAsync("https://i.imgur.com/L5G68Bb.png?1");
+                break;
+            case 6:
+                await ctx.RespondAsync("https://i.imgur.com/0aI0UMn.png");
+                break;
+            case 7:
+                await ctx.RespondAsync("https://i.imgur.com/0dHdxBf.png?1");
+                break;
+            case 8:
+                await ctx.RespondAsync("https://i.imgur.com/XybS8PU.png?1");
+                break;
+            case 9:
+                await ctx.RespondAsync("https://i.imgur.com/5FEA7PW.png");
+                break;
+            case 10:
+                await ctx.RespondAsync("https://i.imgur.com/DFZZjgg.png?1");
+                break;
+            case 11:
+                await ctx.RespondAsync("https://i.imgur.com/DywMKOe.png?1");
+                break;
+            case 12:
+                await ctx.RespondAsync("https://i.imgur.com/8XPDhtE.png?1");
+                break;
+            case 13:
+                await ctx.RespondAsync("https://i.imgur.com/hifyV3Y.png");
+                break;
+        }
+    }
+
+    [Command("RandomOther")]
+    public async Task RandomIndepentent(CommandContext ctx)
+    {
+        Random random = new Random();
+        int character = random.Next(0, 9);
+        switch (character)
+        {
+            case 0:
+                await ctx.RespondAsync("https://i.imgur.com/VTG9E9l.jpg");
+                break;
+            case 1:
+                await ctx.RespondAsync("https://i.imgur.com/zWhgJ4b.jpg");
+                break;
+            case 2:
+                await ctx.RespondAsync("https://i.imgur.com/eVw6PK9.png");
+                break;
+            case 3:
+                await ctx.RespondAsync("https://i.imgur.com/CASwbf1.png?1");
+                break;
+            case 4:
+                await ctx.RespondAsync("https://i.imgur.com/WA3LjIe.jpg?1");
+                break;
+            case 5:
+                await ctx.RespondAsync("https://i.imgur.com/SyuxxBg.png");
+                break;
+            case 6:
+                await ctx.RespondAsync("https://i.imgur.com/HluEgjO.jpg");
+                break;
+            case 7:
+                await ctx.RespondAsync("https://i.imgur.com/GYUqnOo.png?1");
+                break;
+            case 8:
+                await ctx.RespondAsync("https://i.imgur.com/CkYji9d.png?1");
+                break;
+        }
+    }
+
+    [Command("Random")]
+    public async Task RandomAll(CommandContext ctx)
+    {
+        Random random = new Random();
+        int character = random.Next(0, 5);
+        switch (character)
+        {
+            case 0:
+                RandomPlayer(ctx);
+                break;
+            case 1:
+                RandomRadiant(ctx);
+                break;
+            case 2:
+                RandomWings(ctx);
+                break;
+            case 3:
+                RandomOrg(ctx);
+                break;
+            case 4:
+                RandomIndepentent(ctx);
+                break;
         }
     }
 }

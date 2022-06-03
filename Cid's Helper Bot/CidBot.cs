@@ -15,7 +15,7 @@ public class CidBot
 
     public static bool MikiriFound = false;
 
-    public static int randomMax = 101;
+    public static int randomMax = 301;
 
     public static int commandsRecieved = 0;
 

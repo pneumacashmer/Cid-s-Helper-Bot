@@ -8,10 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "Cid's Helper Bot/1.0.0": {
         "dependencies": {
-          "DSharp.FrameWork": "6.6.1125.2154",
-          "DSharpPlus": "4.1.0",
-          "DSharpPlus.CommandsNext": "4.1.0",
-          "DSharpPlus.Interactivity": "4.1.0",
+          "DSharp.FrameWork": "6.7.5.304",
+          "DSharpPlus": "4.2.0",
+          "DSharpPlus.CommandsNext": "4.2.0",
+          "DSharpPlus.Interactivity": "4.2.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
@@ -26,19 +26,19 @@
           }
         }
       },
-      "DSharp.FrameWork/6.6.1125.2154": {
+      "DSharp.FrameWork/6.7.5.304": {
         "dependencies": {
           "System.Drawing.Common": "5.0.2",
           "System.Text.Json": "5.0.2"
         },
         "runtime": {
           "lib/netstandard2.0/DSharp.FrameWork.dll": {
-            "assemblyVersion": "6.6.1125.2154",
-            "fileVersion": "6.6.1125.2154"
+            "assemblyVersion": "6.7.5.304",
+            "fileVersion": "6.7.5.304"
           }
         }
       },
-      "DSharpPlus/4.1.0": {
+      "DSharpPlus/4.2.0": {
         "dependencies": {
           "Emzi0767.Common": "2.6.2",
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
@@ -47,36 +47,37 @@
           "System.Net.Http": "4.3.4",
           "System.Net.WebSockets": "4.3.0",
           "System.Net.WebSockets.Client": "4.3.2",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
+          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
+          "System.Threading.Channels": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/DSharpPlus.dll": {
-            "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.1.0.0"
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
           }
         }
       },
-      "DSharpPlus.CommandsNext/4.1.0": {
+      "DSharpPlus.CommandsNext/4.2.0": {
         "dependencies": {
-          "DSharpPlus": "4.1.0",
+          "DSharpPlus": "4.2.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/DSharpPlus.CommandsNext.dll": {
-            "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.1.0.0"
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
           }
         }
       },
-      "DSharpPlus.Interactivity/4.1.0": {
+      "DSharpPlus.Interactivity/4.2.0": {
         "dependencies": {
           "ConcurrentHashSet": "1.1.0",
-          "DSharpPlus": "4.1.0"
+          "DSharpPlus": "4.2.0"
         },
         "runtime": {
           "lib/netstandard2.0/DSharpPlus.Interactivity.dll": {
-            "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.1.0.0"
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.2.0.0"
           }
         }
       },
@@ -742,6 +743,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Threading.Channels/5.0.0": {},
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -778,33 +780,33 @@
       "path": "concurrenthashset/1.1.0",
       "hashPath": "concurrenthashset.1.1.0.nupkg.sha512"
     },
-    "DSharp.FrameWork/6.6.1125.2154": {
+    "DSharp.FrameWork/6.7.5.304": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cYkDSwzIVzX1/FGe8/00xqUwQCAHjrh2fk+z2NU9UlDuWj3/EBjbqjtaVplb1ldR4UBAgVp9pZAewDNVe361Ng==",
-      "path": "dsharp.framework/6.6.1125.2154",
-      "hashPath": "dsharp.framework.6.6.1125.2154.nupkg.sha512"
+      "sha512": "sha512-s4r8/Rt30Ea3aTzQPCA2a9feD7wcfry0X2o1XiY/YYnhkM06/TkiZu2MoREJY7r+AkDy2w89B7hU817gGzD4Lg==",
+      "path": "dsharp.framework/6.7.5.304",
+      "hashPath": "dsharp.framework.6.7.5.304.nupkg.sha512"
     },
-    "DSharpPlus/4.1.0": {
+    "DSharpPlus/4.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-s1QTvwMvbTTmIviOaVOyFRH2NAwW9IXMnCzevLrEFV6XFJ3ZnYrF2B03K6iA2U9uChUTZVOSNkhRNcPqqZHzCA==",
-      "path": "dsharpplus/4.1.0",
-      "hashPath": "dsharpplus.4.1.0.nupkg.sha512"
+      "sha512": "sha512-sdQQS6ud6UAA7qUXOi5pyt1NMkBuAJ8SdssNJykE+sUXpDfD23Ja1AgUo+QktkTv1/jvQfcyET7HqgpBFdmjmw==",
+      "path": "dsharpplus/4.2.0",
+      "hashPath": "dsharpplus.4.2.0.nupkg.sha512"
     },
-    "DSharpPlus.CommandsNext/4.1.0": {
+    "DSharpPlus.CommandsNext/4.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4rxtz2pWEsJpPBjtnWEB6q5TmFlKLc7w934CQHS26Ylj85/9k+aYLW7e61TEcsd/+zLjUs7BF82YvlhGKImrZQ==",
-      "path": "dsharpplus.commandsnext/4.1.0",
-      "hashPath": "dsharpplus.commandsnext.4.1.0.nupkg.sha512"
+      "sha512": "sha512-Pxo/RLazTHnWQAx22WLvm6VHy2vpH9gnMUJ+zzvqMmX2ZtEraxF72yRKFmE6liYhZ7Fd/Zab/p52W2/L+UXVjA==",
+      "path": "dsharpplus.commandsnext/4.2.0",
+      "hashPath": "dsharpplus.commandsnext.4.2.0.nupkg.sha512"
     },
-    "DSharpPlus.Interactivity/4.1.0": {
+    "DSharpPlus.Interactivity/4.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FTQXMqGoWvGMox+UyybL0Jc/P12xTCIUfMRF0n3974Sa5QiwrqhDdP02lHmUS7k7dQF+vMY/YLjLyYdPB7hpFw==",
-      "path": "dsharpplus.interactivity/4.1.0",
-      "hashPath": "dsharpplus.interactivity.4.1.0.nupkg.sha512"
+      "sha512": "sha512-ZCYFmLT+LNwZygNXX4C1RQI3cSs2zTLaIoam8cAp8TIdani5xVxMF0CTOtUNxXy/pjRyYcfjnY/USWN9kz2cqg==",
+      "path": "dsharpplus.interactivity/4.2.0",
+      "hashPath": "dsharpplus.interactivity.4.2.0.nupkg.sha512"
     },
     "Emzi0767.Common/2.6.2": {
       "type": "package",
@@ -1316,6 +1318,13 @@
       "sha512": "sha512-VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "path": "system.threading/4.3.0",
       "hashPath": "system.threading.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Channels/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RLBIxntLaG9pRmmuVDwY1kc8Bvp/FQzSxPU+19VekkScKkWtVP9r8bLhm28ama3usc816UBrmkg3vv3jUea/hw==",
+      "path": "system.threading.channels/5.0.0",
+      "hashPath": "system.threading.channels.5.0.0.nupkg.sha512"
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",

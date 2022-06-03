@@ -46,19 +46,19 @@
           "dependencies": {
             "DSharp.FrameWork": {
               "target": "Package",
-              "version": "[6.6.1125.2154, )"
+              "version": "[6.7.5.304, )"
             },
             "DSharpPlus": {
               "target": "Package",
-              "version": "[4.1.0, )"
+              "version": "[4.2.0, )"
             },
             "DSharpPlus.CommandsNext": {
               "target": "Package",
-              "version": "[4.1.0, )"
+              "version": "[4.2.0, )"
             },
             "DSharpPlus.Interactivity": {
               "target": "Package",
-              "version": "[4.1.0, )"
+              "version": "[4.2.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
